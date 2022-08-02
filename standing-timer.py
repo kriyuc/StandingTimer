@@ -16,7 +16,7 @@ sg.theme('Black')
 layout = [[sg.Text('')],
           [sg.Text('', size=(6, 2), font=('Helvetica', 20),
                 justification='center', key='text')],
-          [sg.Button('Run', key='-RUN-PAUSE-', button_color=('white', '#001480')),
+          [sg.Button('Stand Up', key='-RUN-PAUSE-', button_color=('white', '#001480')),
            sg.Button('Reset', button_color=('white', '#007339'), key='-RESET-'),
            sg.Exit(button_color=('white', 'firebrick4'), key='Exit')]]
 
@@ -47,7 +47,7 @@ while True:
         current_time = 0
         segments = []
         paused = True
-        window['-RUN-PAUSE-'].update('Run' if paused else 'Pause')
+        window['-RUN-PAUSE-'].update('Stand Up' if paused else 'Sit Down')
     elif event == '-RUN-PAUSE-':
         paused = not paused
         if paused:
