@@ -57,7 +57,7 @@ while True:
             start_time = time_as_int() if not start_time else start_time + time_as_int() - paused_time
             last_start_time = time_as_int()
         # Change button's text
-        window['-RUN-PAUSE-'].update('Run' if paused else 'Pause')
+        window['-RUN-PAUSE-'].update('Stand Up' if paused else 'Sit Down')
     # --------- Display timer in window --------
     window['text'].update('{:02d}:{:02d}'.format((current_time // 100) // 60,
                                                         (current_time // 100) % 60,
