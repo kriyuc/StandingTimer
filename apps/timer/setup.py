@@ -12,5 +12,5 @@ setup(
     entry_points={
         "console_scripts": ["standing-timer=standing_timer.standing_timer:main"],
     },
-    install_requires=["PySimpleGUI", "tinydb"],
+    install_requires=["PySimpleGUI", "tinydb", "configparser"],
 )
