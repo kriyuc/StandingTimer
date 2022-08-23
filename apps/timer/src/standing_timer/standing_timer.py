@@ -4,7 +4,7 @@ import PySimpleGUI as sg
 import time
 from datetime import datetime
 from tinydb import TinyDB, Query
-from config import write_auth_config, has_auth_token, config
+from .config import write_auth_config, has_auth_token, config
 
 
 def time_as_int():
