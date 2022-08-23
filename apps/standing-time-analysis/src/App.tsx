@@ -1,12 +1,11 @@
 import React from "react";
+import { AppLayout } from "./components/app/app-layout";
 
 function App() {
   return (
-    <div>
-      <header style={{ height: 60, background: "blue" }}>
-        <h1>Welcome to Standing Time Analysis</h1>
-      </header>
-    </div>
+    <AppLayout>
+      <div>bueno</div>
+    </AppLayout>
   );
 }
 
