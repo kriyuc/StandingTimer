@@ -1,6 +1,6 @@
 venv/
 practice-venv/
-*.json
+standing-timer.json
 
 # Compiled python modules.
 *.pyc
