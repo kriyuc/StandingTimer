@@ -6,8 +6,7 @@ setup(
     version="0.0.1",
     license="MIT",
     author="Dante Poleselli",
-    packages=find_packages("src"),
-    package_dir={"": "src"},
+    packages=find_packages("."),
     url="https://github.com/dpoleselli/StandingTimer/apps/timer",
     entry_points={
         "console_scripts": ["standing-timer=standing_timer.standing_timer:main"],

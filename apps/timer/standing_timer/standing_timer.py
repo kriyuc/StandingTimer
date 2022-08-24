@@ -4,7 +4,7 @@ import PySimpleGUI as sg
 import time
 from datetime import datetime
 from tinydb import TinyDB, Query
-from .config import write_auth_config, has_auth_token, config
+from standing_timer.config import write_auth_config, has_auth_token
 
 
 def time_as_int():
@@ -16,6 +16,18 @@ def today():
 
 
 def main():
+    token = ""
+
+    if not has_auth_token():
+        while token.strip() == "":
+            token = input("Please enter your auth token:")
+
+    server_url = input(
+        "Please enter your custom server url if applicable (default StandingTimer prod):"
+    )
+
+    write_auth_config(token, server_url)
+
     sg.theme("Black")
 
     layout = [
@@ -117,16 +129,4 @@ def main():
 
 
 if __name__ == "__main__":
-    token = ""
-
-    if not has_auth_token():
-        while token.strip() == "":
-            token = input("Please enter your auth token:")
-
-    server_url = input(
-        "Please enter your custom server url if applicable (default StandingTimer prod):"
-    )
-
-    write_auth_config(token, server_url)
-
     main()
