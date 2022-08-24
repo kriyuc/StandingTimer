@@ -12,7 +12,7 @@ standing-timer.json
 **/*.egg-info
 **/*.egg
 
-########### stan
+########### standing timer analysis ##########
 # dependencies
 **/node_modules
 **/.pnp
@@ -30,6 +30,7 @@ standing-timer.json
 **/.env.development.local
 **/.env.test.local
 **/.env.production.local
+.vscode
 
 **/npm-debug.log*
 **/yarn-debug.log*
