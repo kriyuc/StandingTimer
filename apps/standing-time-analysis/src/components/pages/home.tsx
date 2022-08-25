@@ -1,33 +1,19 @@
-import { Box } from "@mui/material";
-import React, { useMemo } from "react";
+import { Box, Stack, Typography } from "@mui/material";
+import React from "react";
 import { BarChart } from "../charts/bar-chart";
+import sampleData from "../../test-data/data.json";
+import { useBarChartData } from "../../hooks/useBarChartData";
+import { ChartWithTitleLayout } from "../charts/chart-with-title-layout";
 
 export const HomePage = () => {
-  const data = useMemo(
-    () => [
-      {
-        label: "Series 1",
-        data: [
-          { x: "group 1", y: 5 },
-          { x: "group 2", y: 2 },
-          { x: "group 3", y: 9 },
-        ],
-      },
-      {
-        label: "Series 2",
-        data: [
-          { x: "group 1", y: 5 },
-          { x: "group 2", y: 2 },
-          { x: "group 3", y: 9 },
-        ],
-      },
-    ],
-    []
-  );
+  const data = useBarChartData({ data: Object.values(sampleData["_default"]) });
 
   return (
-    <Box height="80vh" width="90%">
-      <BarChart data={data} />
+    <Box height="80vh" width="85%" m="auto">
+      <ChartWithTitleLayout
+        title="Standing Time Per Day"
+        chart={<BarChart data={data} />}
+      />
     </Box>
   );
 };
