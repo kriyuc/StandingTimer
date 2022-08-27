@@ -1,8 +1,8 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import React from "react";
 import { BarChart } from "../charts/bar-chart";
 import sampleData from "../../test-data/data.json";
-import { useBarChartData } from "../../hooks/useBarChartData";
+import { useBarChartData } from "../../hooks/use-bar-chart-data";
 import { ChartWithTitleLayout } from "../charts/chart-with-title-layout";
 
 export const HomePage = () => {

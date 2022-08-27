@@ -33,7 +33,7 @@ export const useBarChartData = (props: UseBarChartDataProps) => {
         }),
       };
     });
-  }, []);
+  }, [data]);
 };
 
 interface DateValue {

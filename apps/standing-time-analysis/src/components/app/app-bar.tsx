@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
+import { useNewRelic } from "../../hooks/use-new-relic";
 
 const pages = [
   { label: "Home", url: "/" },
@@ -16,6 +17,8 @@ const pages = [
 ];
 
 export const AppBar = () => {
+  const { addNewRelicAction } = useNewRelic();
+
   return (
     <MuiAppBar position="static">
       <Toolbar>
@@ -35,7 +38,15 @@ export const AppBar = () => {
           <Typography variant="h5">Standing Time Analysis</Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Link key={page.label} to={page.url}>
+              <Link
+                key={page.label}
+                to={page.url}
+                onClick={() =>
+                  addNewRelicAction("app-bar-page-clicked", {
+                    link: page.label,
+                  })
+                }
+              >
                 <Button sx={{ my: 2, color: "white", display: "block" }}>
                   {page.label}
                 </Button>
