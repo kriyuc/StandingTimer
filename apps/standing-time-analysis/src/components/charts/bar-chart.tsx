@@ -23,5 +23,5 @@ export const BarChart = (props: BarChartProps) => {
     []
   );
 
-  return <Chart data={data} series={series} axes={axes} />;
+  return data.length ? <Chart data={data} series={series} axes={axes} /> : null;
 };
